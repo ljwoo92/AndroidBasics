@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress DeprecatedClassUsageInspection -->
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/host"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@android:id/tabs">
+
+            <TextView
+                android:id="@+id/tabContent1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/tab_1"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tabContent2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/tab_2"
+                android:gravity="center"
+                android:textStyle="bold|italic"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tabContent3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/tab_3"
+                android:gravity="center"
+                android:textStyle="bold|italic" />
+        </FrameLayout>
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/design_default_color_primary"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</TabHost>
