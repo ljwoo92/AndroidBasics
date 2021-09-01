@@ -6,14 +6,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.math.BigInteger;
+
 
 public class CalculatorPractice extends AppCompatActivity {
 
     public CalculatorPractice() {
         needRefresh_ = false;
         updateSecondOperand_ = false;
-        firstOperand_ = 0;
-        secondOperand_ = 0;
+        firstOperand_ = new BigInteger("0");
+        secondOperand_ = new BigInteger("0");
     }
 
     @Override
@@ -66,7 +68,7 @@ public class CalculatorPractice extends AppCompatActivity {
                     break;
                 }
                 case R.id.btnPlus: {
-                    firstOperand_ = Integer.parseInt((String) mainText_.getText());
+                    firstOperand_ = new BigInteger((String) mainText_.getText());
                     selectedOperator_ = Operator.PLUS;
                     needRefresh_ = true;
                     updateSecondOperand_ = true;
@@ -74,21 +76,21 @@ public class CalculatorPractice extends AppCompatActivity {
                 }
                 case R.id.btnSubtract: {
                     selectedOperator_ = Operator.SUBTRACT;
-                    firstOperand_ = Integer.parseInt((String) mainText_.getText());
+                    firstOperand_ = new BigInteger((String) mainText_.getText());
                     needRefresh_ = true;
                     updateSecondOperand_ = true;
                     break;
                 }
                 case R.id.btnMultiply: {
                     selectedOperator_ = Operator.MULTIPLY;
-                    firstOperand_ = Integer.parseInt((String) mainText_.getText());
+                    firstOperand_ = new BigInteger((String) mainText_.getText());
                     needRefresh_ = true;
                     updateSecondOperand_ = true;
                     break;
                 }
                 case R.id.btnDivide: {
                     selectedOperator_ = Operator.DIVIDE;
-                    firstOperand_ = Integer.parseInt((String) mainText_.getText());
+                    firstOperand_ = new BigInteger((String) mainText_.getText());
                     needRefresh_ = true;
                     updateSecondOperand_ = true;
                     break;
@@ -105,34 +107,34 @@ public class CalculatorPractice extends AppCompatActivity {
         private void calculate() {
             try {
                 String str;
-                int result = 0;
+                BigInteger result = new BigInteger("0");
 
                 if (updateSecondOperand_) {
                     updateSecondOperand_ = false;
-                    secondOperand_ = Integer.parseInt((String) mainText_.getText());
+                    secondOperand_ = new BigInteger((String) mainText_.getText());
                 }
 
                 if (selectedOperator_ == Operator.PLUS) {
-                    result = firstOperand_ + secondOperand_;
+                    result = firstOperand_.add(secondOperand_);
                 } else if (selectedOperator_ == Operator.SUBTRACT) {
-                    result = firstOperand_ - secondOperand_;
+                    result = firstOperand_.subtract(secondOperand_);
                 } else if (selectedOperator_ == Operator.MULTIPLY) {
-                    result = firstOperand_ * secondOperand_;
+                    result = firstOperand_.multiply(secondOperand_);
                 } else if (selectedOperator_ == Operator.DIVIDE) {
-                    if (secondOperand_ == 0) {
+                    if (secondOperand_.longValue() == 0) {
                         throw new ArithmeticException();
                     }
-                    result = firstOperand_ / secondOperand_;
+                    result = firstOperand_.divide(secondOperand_);
                 } else if (selectedOperator_ == Operator.NONE) {
                 } else {
                 }
 
                 firstOperand_ = result;
-                str = Integer.toString(result);
+                str = result.toString();
                 mainText_.setText(str);
             } catch (ArithmeticException e) {
-                firstOperand_ = 0;
-                secondOperand_ = 0;
+                firstOperand_ = new BigInteger("0");
+                firstOperand_ = new BigInteger("0");
                 selectedOperator_ = Operator.NONE;
                 needRefresh_ = false;
                 mainText_.setText(R.string.strDivideByZeroWarning);
@@ -194,7 +196,7 @@ public class CalculatorPractice extends AppCompatActivity {
     private boolean needRefresh_;
     private boolean updateSecondOperand_;
 
-    private int firstOperand_;
-    private int secondOperand_;
+    private BigInteger firstOperand_;
+    private BigInteger secondOperand_;
     private Operator selectedOperator_;
 }
