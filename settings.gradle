@@ -10,3 +10,4 @@ rootProject.name = "AndroidBasics"
 include ':app'
 include ':part2_3'
 include ':part2_4'
+include ':part2_5'
