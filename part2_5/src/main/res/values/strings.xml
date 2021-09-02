@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Part2_5</string>
+    <string name="strHeader">USB 디버깅을 허용하시겠습니까?</string>
+    <string name="strHeader2">컴퓨터 RSA키 지문:</string>
+    <string name="strRsaSample">17:AA:BB:77:88:DD:98:7E</string>
 </resources>

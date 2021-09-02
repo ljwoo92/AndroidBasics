@@ -33,4 +33,49 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="alert dialog"
+        android:id="@+id/btnAlert"
+        app:layout_constraintTop_toBottomOf="@id/btnCustom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="list dialog"
+        android:id="@+id/btnList"
+        app:layout_constraintTop_toBottomOf="@id/btnAlert"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="date dialog"
+        android:id="@+id/btnDate"
+        app:layout_constraintTop_toBottomOf="@id/btnList"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="time dialog"
+        android:id="@+id/btnTime"
+        app:layout_constraintTop_toBottomOf="@id/btnDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="custom dialog"
+        android:id="@+id/btnCustomDialog"
+        app:layout_constraintTop_toBottomOf="@id/btnTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
