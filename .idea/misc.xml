@@ -19,9 +19,13 @@
         <entry key="part2_5/src/main/res/layout/dialog_layout.xml" value="0.3242753623188406" />
         <entry key="part2_6/src/main/res/drawable/ic_launcher_background.xml" value="0.2359375" />
         <entry key="part2_6/src/main/res/layout/activity_main.xml" value="0.21979166666666666" />
+        <entry key="part2_6/src/main/res/layout/activity_read_db.xml" value="0.32065217391304346" />
         <entry key="part2_7/src/main/res/drawable/ic_launcher_background.xml" value="0.2328125" />
         <entry key="part2_7/src/main/res/layout/activity_lab7_2.xml" value="0.20572916666666666" />
         <entry key="part2_7/src/main/res/layout/activity_main.xml" value="0.21666666666666667" />
+        <entry key="part3_8/src/main/res/layout/activity_lab8_2.xml" value="0.21979166666666666" />
+        <entry key="part3_8/src/main/res/layout/activity_main.xml" value="0.32065217391304346" />
+        <entry key="part3_8/src/main/res/layout/activity_realm_read.xml" value="0.21979166666666666" />
       </map>
     </option>
   </component>
